@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>르노코리아 4월 특별 혜택</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --green:#004225;--green-mid:#006B3C;--green-light:#E8F4EE;
+  --yellow:#C8F000;--yellow-dark:#9BBB00;
+  --text:#1A1A1A;--text-muted:#5A6570;--text-light:#8A949C;
+  --border:#E0E6E3;--bg:#F7FAF8;--white:#FFFFFF;
+  --red:#D63B3B;--amber:#E87C1E;--blue:#1B6FA3;
+  --radius:14px;--radius-sm:10px;
+}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;max-width:480px;margin:0 auto}
+
+/* HEADER */
+.hero{background:var(--green);padding:24px 20px 28px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;border:40px solid rgba(200,240,0,0.08)}
+.hero::after{content:'';position:absolute;right:20px;bottom:-60px;width:140px;height:140px;border-radius:50%;border:30px solid rgba(200,240,0,0.06)}
+.hero-badge{display:inline-block;background:var(--yellow);color:var(--green);font-size:11px;font-weight:700;letter-spacing:0.06em;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+.hero h1{color:#FFFFFF;font-size:26px;font-weight:900;line-height:1.25;margin-bottom:6px}
+.hero h1 span{color:var(--yellow)}
+.hero-sub{color:rgba(255,255,255,0.7);font-size:13px;font-weight:300}
+.hero-period{margin-top:14px;display:flex;align-items:center;gap:8px}
+.hero-period-badge{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);font-size:12px;padding:5px 12px;border-radius:20px;font-weight:500}
+
+/* TAB NAV */
+.tab-nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 16px;position:sticky;top:0;z-index:100;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.tab-nav::-webkit-scrollbar{display:none}
+.tab-btn{flex:none;padding:14px 16px;font-size:14px;font-weight:500;color:var(--text-muted);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;font-family:inherit;transition:all 0.2s}
+.tab-btn.active{color:var(--green);border-bottom-color:var(--green);font-weight:700}
+
+/* SECTION */
+.section{padding:20px 16px;display:none}
+.section.active{display:block}
+
+/* SUMMARY CARD */
+.summary-card{background:var(--green);border-radius:var(--radius);padding:18px 20px;margin-bottom:18px;position:relative;overflow:hidden}
+.summary-card::after{content:'';position:absolute;right:-20px;bottom:-20px;width:100px;height:100px;border-radius:50%;border:25px solid rgba(200,240,0,0.12)}
+.summary-card .label{color:rgba(255,255,255,0.7);font-size:12px;font-weight:400;margin-bottom:4px}
+.summary-card .amount{color:var(--yellow);font-size:32px;font-weight:900;line-height:1}
+.summary-card .amount span{font-size:16px;font-weight:500;color:rgba(255,255,255,0.8);margin-left:4px}
+.summary-card .note{color:rgba(255,255,255,0.6);font-size:11px;margin-top:6px}
+.summary-card .model-name{color:rgba(255,255,255,0.5);font-size:12px;font-weight:700;letter-spacing:0.1em;margin-bottom:10px}
+
+/* NEW BADGE */
+.new-badge{display:inline-block;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:0.05em;margin-left:6px;vertical-align:middle}
+
+/* BENEFIT LIST */
+.benefit-list{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.benefit-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;display:flex;align-items:flex-start;gap:12px}
+.benefit-icon{width:40px;height:40px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.benefit-body{flex:1;min-width:0}
+.benefit-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.benefit-desc{font-size:12px;color:var(--text-muted);line-height:1.5}
+.benefit-amount{font-size:18px;font-weight:900;color:var(--green-mid);text-align:right;flex-shrink:0;align-self:center}
+.benefit-amount.big{font-size:22px}
+
+/* OVERLAP NOTICE */
+.overlap-box{background:var(--green-light);border:1px solid #B5D9C5;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:18px}
+.overlap-box .title{font-size:12px;font-weight:700;color:var(--green);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.overlap-box .formula{font-size:13px;color:var(--green-mid);font-weight:500;line-height:1.7}
+
+/* FINANCE SECTION */
+.finance-title{font-size:13px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;padding-left:4px}
+.finance-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+.finance-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px}
+.finance-card .rate{font-size:22px;font-weight:900;color:var(--text)}
+.finance-card .rate span{font-size:14px;font-weight:400;color:var(--text-muted)}
+.finance-card .rate-label{font-size:11px;color:var(--text-muted);margin-top:2px}
+.finance-card.highlight{border-color:var(--green);background:var(--green-light)}
+.finance-card.highlight .rate{color:var(--green)}
+.finance-card.highlight .rate-label{color:var(--green-mid)}
+
+/* SPECIAL CONDITIONS */
+.special-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.special-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+.special-item .s-left .s-title{font-size:14px;font-weight:700;color:var(--text)}
+.special-item .s-left .s-cond{font-size:12px;color:var(--text-muted);margin-top:2px}
+.special-item .s-amount{font-size:18px;font-weight:900;color:var(--amber)}
+
+/* NOTICE BOX */
+.notice-box{background:#FFF7ED;border:1px solid #FDDCB0;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:18px}
+.notice-box .n-title{font-size:12px;font-weight:700;color:#B45309;margin-bottom:6px}
+.notice-box ul{padding-left:14px}
+.notice-box li{font-size:12px;color:#92400E;line-height:1.7}
+
+/* CONTACT CARD */
+.contact-card{background:var(--green);border-radius:var(--radius);padding:20px;margin:0 0 24px}
+.contact-card .c-name{color:#FFFFFF;font-size:20px;font-weight:700;margin-bottom:2px}
+.contact-card .c-role{color:rgba(255,255,255,0.65);font-size:13px;margin-bottom:16px}
+.contact-card .c-divider{height:1px;background:rgba(255,255,255,0.12);margin-bottom:14px}
+.contact-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.contact-row:last-child{margin-bottom:0}
+.contact-icon{width:30px;height:30px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+.contact-row .c-text{color:rgba(255,255,255,0.85);font-size:13px}
+.contact-row .c-text strong{color:#FFFFFF;font-size:15px;font-weight:700}
+.cta-btn{display:block;width:100%;margin-top:14px;padding:14px;background:var(--yellow);border:none;border-radius:10px;font-size:16px;font-weight:700;color:var(--green);text-align:center;cursor:pointer;font-family:inherit;text-decoration:none}
+
+/* SECTION HEADER */
+.sec-header{font-size:16px;font-weight:700;color:var(--text);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--green-light)}
+.sec-header span{color:var(--green)}
+
+/* TAG */
+.tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:5px;font-weight:600;margin-right:4px}
+.tag-green{background:var(--green-light);color:var(--green-mid)}
+.tag-amber{background:#FFF3E0;color:#E65100}
+.tag-blue{background:#E3F2FD;color:#1565C0}
+
+/* FOOTNOTE */
+.footnote{font-size:11px;color:var(--text-light);padding:0 16px 30px;line-height:1.7;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">2026년 4월 한정</div>
+  <h1>르노코리아<br><span>특별 혜택</span> 안내</h1>
+  <p class="hero-sub">그랑 콜레오스 · 필랑트 · 아르카나</p>
+  <div class="hero-period">
+    <div class="hero-period-badge">📅 4월 1일 ~ 4월 30일</div>
+    <div class="hero-period-badge">한정 수량</div>
+  </div>
+</div>
+
+<!-- TAB NAV -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('koleos')">🚙 그랑 콜레오스</button>
+  <button class="tab-btn" onclick="showTab('filante')">🚗 필랑트</button>
+  <button class="tab-btn" onclick="showTab('arkana')">⚡ 아르카나</button>
+  <button class="tab-btn" onclick="showTab('special')">🎖 특별조건</button>
+  <button class="tab-btn" onclick="showTab('contact')">📞 상담</button>
+</nav>
+
+<!-- ===== 그랑 콜레오스 ===== -->
+<div id="tab-koleos" class="section active">
+
+  <div class="summary-card">
+    <div class="model-name">GRAND KOLEOS 26MY</div>
+    <div class="label">가솔린 최대 현금 혜택 합계</div>
+    <div class="amount">400<span>만원</span></div>
+    <div class="note">*가솔린 트림 · ~25.8 생산 · Loyalty 조건 충족 시</div>
+  </div>
+
+  <div class="sec-header"><span>이달의</span> 프로모션 혜택</div>
+
+  <div class="benefit-list">
+
+    <div class="benefit-item">
+      <div class="benefit-icon">⛽</div>
+      <div class="benefit-body">
+        <div class="benefit-title">가솔린 프로모션</div>
+        <div class="benefit-desc">가솔린 트림 대상 (Techno 제외)</div>
+      </div>
+      <div class="benefit-amount big">100만</div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">🔁</div>
+      <div class="benefit-body">
+        <div class="benefit-title">Loyalty 프로모션</div>
+        <div class="benefit-desc">르노코리아 신차/중고차 구매 이력 고객<br><span class="tag tag-green">어게인</span> or <span class="tag tag-blue">웰컴</span> 중 택1</div>
+      </div>
+      <div class="benefit-amount big">50만</div>
+    </div>
+
+    <div class="benefit-item" style="border-color:#C8F000;background:#FAFFF0">
+      <div class="benefit-icon" style="background:#F0FFD0">🚗</div>
+      <div class="benefit-body">
+        <div class="benefit-title">유류비 지원<span class="new-badge">NEW</span></div>
+        <div class="benefit-desc">전 트림 (Techno 제외)</div>
+      </div>
+      <div class="benefit-amount big" style="color:#5A8A00">50만</div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">📅</div>
+      <div class="benefit-body">
+        <div class="benefit-title">생산월별 특별 혜택</div>
+        <div class="benefit-desc">
+          <span class="tag tag-amber">~25.8 생산</span> 200만원<br>
+          <span class="tag tag-amber">25.9~10 생산</span> 100만원<br>
+          <span class="tag tag-amber">25.11~12 생산</span> 50만원
+        </div>
+      </div>
+      <div class="benefit-amount" style="color:var(--amber)">최대<br>200만</div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">🏦</div>
+      <div class="benefit-body">
+        <div class="benefit-title">My Way 할부 <span class="tag tag-blue">~25.12 생산</span></div>
+        <div class="benefit-desc">36개월 무이자 (최대 2,000만원)<br>생산월별 특별할인과 동시 적용 가능</div>
+      </div>
+      <div class="benefit-amount" style="color:var(--blue)">0%<br>36개월</div>
+    </div>
+
+    <div class="benefit-item" style="border-color:#B5D9C5;background:#F2FAF5">
+      <div class="benefit-icon" style="background:#DCF0E7">🛡</div>
+      <div class="benefit-body">
+        <div class="benefit-title">R:assure 베이직</div>
+        <div class="benefit-desc">36개월 후 중고차 가격 <strong>67% 보장</strong><br>엔진오일 무상교환 + 33개 정밀점검 포함</div>
+      </div>
+      <div class="benefit-amount" style="color:var(--green-mid);font-size:15px">67%<br>보장</div>
+    </div>
+
+  </div>
+
+  <div class="overlap-box">
+    <div class="title">✅ 중복 적용 가능 조합</div>
+    <div class="formula">① 가솔린 100 + ② Loyalty 50 + ④ 생산특별 + ⑤ 유류비 50 + ⑥ R:assure</div>
+  </div>
+
+  <div class="finance-title">할부 금융 조건</div>
+  <div class="finance-cards">
+    <div class="finance-card highlight">
+      <div class="rate">1.4<span>%</span></div>
+      <div class="rate-label">재구매 저리 (36개월)</div>
+    </div>
+    <div class="finance-card highlight">
+      <div class="rate">2.7<span>%</span></div>
+      <div class="rate-label">재구매 저리 (37~60개월)</div>
+    </div>
+    <div class="finance-card">
+      <div class="rate">3.5<span>%</span></div>
+      <div class="rate-label">표준형 (36개월)</div>
+    </div>
+    <div class="finance-card">
+      <div class="rate">3.99<span>%</span></div>
+      <div class="rate-label">표준형 (37~60개월)</div>
+    </div>
+  </div>
+
+  <div class="notice-box">
+    <div class="n-title">⚠️ 유의사항</div>
+    <ul>
+      <li>Techno 트림은 특별 판매조건 적용 불가</li>
+      <li>Loyalty 어게인/웰컴은 개인·개인사업자만 가능</li>
+      <li>렌트 사업자(타운카 포함) 제외</li>
+      <li>MFS 어게인은 Loyalty 어게인/웰컴과 중복 불가</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ===== 필랑트 ===== -->
+<div id="tab-filante" class="section">
+
+  <div class="summary-card" style="background:#1A4A30">
+    <div class="model-name">FILANTE 27MY</div>
+    <div class="label">Loyalty 혜택 + 초저금리 할부</div>
+    <div class="amount">50<span>만원 +</span></div>
+    <div class="note">*Loyalty 조건 충족 시 / MFS 재구매 시 1.6% 적용</div>
+  </div>
+
+  <div class="sec-header"><span>이달의</span> 프로모션 혜택</div>
+
+  <div class="benefit-list">
+
+    <div class="benefit-item">
+      <div class="benefit-icon">🔁</div>
+      <div class="benefit-body">
+        <div class="benefit-title">Loyalty 프로모션</div>
+        <div class="benefit-desc">르노코리아 신차/중고차 구매 이력 고객<br><span class="tag tag-green">어게인</span> or <span class="tag tag-blue">웰컴</span> 중 택1<br>개인·개인사업자만 가능 (Techno 제외)</div>
+      </div>
+      <div class="benefit-amount big">50만</div>
+    </div>
+
+    <div class="benefit-item" style="border-color:#B5D9C5">
+      <div class="benefit-icon">📊</div>
+      <div class="benefit-body">
+        <div class="benefit-title">MFS 재구매 저리 할부</div>
+        <div class="benefit-desc">MFS 할부 신차 구매 이력 고객<br>26.4월 MFS 할부 이용 시 적용<br><span class="tag tag-amber">Loyalty 어게인과 중복 불가</span></div>
+      </div>
+      <div class="benefit-amount" style="color:var(--green-mid);font-size:15px">금리<br>인하</div>
+    </div>
+
+  </div>
+
+  <div class="finance-title">할부 금융 조건</div>
+  <div class="finance-cards">
+    <div class="finance-card highlight">
+      <div class="rate">1.6<span>%</span></div>
+      <div class="rate-label">재구매 저리 (36개월)</div>
+    </div>
+    <div class="finance-card highlight">
+      <div class="rate">2.3<span>%</span></div>
+      <div class="rate-label">재구매 저리 (37~60개월)</div>
+    </div>
+    <div class="finance-card">
+      <div class="rate">3.3<span>%</span></div>
+      <div class="rate-label">표준형 (36개월)</div>
+    </div>
+    <div class="finance-card">
+      <div class="rate">3.9<span>%</span></div>
+      <div class="rate-label">표준형 (37~60개월)</div>
+    </div>
+    <div class="finance-card" style="grid-column:1/-1">
+      <div class="rate">0<span>% · 3개월</span></div>
+      <div class="rate-label">초단기 무이자 (차량가격 40% 이상)</div>
+    </div>
+  </div>
+
+  <div class="notice-box">
+    <div class="n-title">⚠️ 유의사항</div>
+    <ul>
+      <li>Techno 트림은 특별 판매조건 적용 불가</li>
+      <li>개인·개인사업자만 가능 (렌트 사업자 제외)</li>
+      <li>MFS 어게인과 Loyalty 어게인/웰컴은 중복 불가</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ===== 아르카나 ===== -->
+<div id="tab-arkana" class="section">
+
+  <div class="summary-card" style="background:#0A3D22">
+    <div class="model-name">ARKANA 26MY/27MY HEV</div>
+    <div class="label">최대 현금 혜택 합계 (HEV 기준)</div>
+    <div class="amount">260<span>만원</span></div>
+    <div class="note">*~26.8 생산 HEV · Loyalty · 할부고객 · 뉴스타트 조합</div>
+  </div>
+
+  <div class="sec-header"><span>이달의</span> 프로모션 혜택</div>
+
+  <div class="benefit-list">
+
+    <div class="benefit-item">
+      <div class="benefit-icon">🔁</div>
+      <div class="benefit-body">
+        <div class="benefit-title">Loyalty 프로모션</div>
+        <div class="benefit-desc">르노코리아 신차/중고차 구매 이력 고객<br>개인·개인사업자만 가능</div>
+      </div>
+      <div class="benefit-amount big">50만</div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">📅</div>
+      <div class="benefit-body">
+        <div class="benefit-title">생산월별 특별할인 <span class="tag tag-green">26MY HEV</span></div>
+        <div class="benefit-desc">
+          <span class="tag tag-amber">~26.8 생산</span> 130만원<br>
+          <span class="tag tag-amber">25.9~26.2 생산</span> 50만원
+        </div>
+      </div>
+      <div class="benefit-amount" style="color:var(--amber)">최대<br>130만</div>
+    </div>
+
+    <div class="benefit-item">
+      <div class="benefit-icon">💳</div>
+      <div class="benefit-body">
+        <div class="benefit-title">할부 고객 추가 할인</div>
+        <div class="benefit-desc">
+          <span class="tag tag-green">HEV</span> 표준형/바이백 · 1,500만원↑ · 24개월↑<br>
+          <span class="tag tag-blue">가솔린</span> 100만원 (조건 동일)
+        </div>
+      </div>
+      <div class="benefit-amount" style="color:var(--blue)">최대<br>100만</div>
+    </div>
+
+    <div class="benefit-item" style="border-color:#C8F000;background:#FAFFF0">
+      <div class="benefit-icon" style="background:#F0FFD0">🌱</div>
+      <div class="benefit-body">
+        <div class="benefit-title">뉴 스타트</div>
+        <div class="benefit-desc">신생아·신입생·신입사원·신혼가족<br>신규개인사업자·신규면허자 (26.1.1↑)</div>
+      </div>
+      <div class="benefit-amount big" style="color:#5A8A00">30만</div>
+    </div>
+
+  </div>
+
+  <div class="overlap-box">
+    <div class="title">✅ 중복 적용 가능 조합</div>
+    <div class="formula">① Loyalty 50 + ③ 생산특별 130 + ④ 할부추가 50 + ⑤ 뉴스타트 30<br>→ 최대 260만원 현금 혜택</div>
+  </div>
+
+  <div class="finance-title">할부 금융 조건</div>
+  <div class="finance-cards">
+    <div class="finance-card highlight" style="grid-column:1/-1">
+      <div class="rate">0<span>% · 가솔린 무이자</span></div>
+      <div class="rate-label">36개월 무이자 할부</div>
+    </div>
+    <div class="finance-card highlight" style="grid-column:1/-1">
+      <div class="rate">0<span>% · HEV 재구매 무이자</span></div>
+      <div class="rate-label">MFS 기출고 고객 36개월 무이자</div>
+    </div>
+    <div class="finance-card">
+      <div class="rate">1.99<span>%</span></div>
+      <div class="rate-label">표준형 HEV전용 (36개월)</div>
+    </div>
+    <div class="finance-card">
+      <div class="rate">5.6<span>%</span></div>
+      <div class="rate-label">표준형 (36개월)</div>
+    </div>
+  </div>
+
+  <div class="notice-box">
+    <div class="n-title">⚠️ 유의사항</div>
+    <ul>
+      <li>생산월별 특별할인은 26MY HEV 트림만 해당</li>
+      <li>가솔린 무이자와 HEV 재구매 무이자는 별도 조건</li>
+      <li>개인·개인사업자만 가능 (렌트 사업자 제외)</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ===== 특별 판매조건 ===== -->
+<div id="tab-special" class="section">
+
+  <div class="sec-header"><span>특별</span> 판매조건 요약</div>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px">아래 조건 중 해당하시면 추가 혜택을 받으실 수 있습니다. 여타 조건과 중복 적용 가능합니다.</p>
+
+  <div class="special-grid">
+
+    <div class="special-item">
+      <div class="s-left">
+        <div class="s-title">🌱 뉴 스타트</div>
+        <div class="s-cond">신생아·신입생·신입사원·신혼가족<br>신규개인사업자·신규면허자 (26.1.1 이후)<br><span class="tag tag-green">아르카나만 적용</span></div>
+      </div>
+      <div class="s-amount">30만</div>
+    </div>
+
+    <div class="special-item">
+      <div class="s-left">
+        <div class="s-title">🔁 Loyalty 프로모션</div>
+        <div class="s-cond">르노코리아 신차/중고차 구매 이력 고객<br>전 차종 (Techno 제외)</div>
+      </div>
+      <div class="s-amount">50만</div>
+    </div>
+
+    <div class="special-item">
+      <div class="s-left">
+        <div class="s-title">💳 삼성패밀리카드 (SFC)</div>
+        <div class="s-cond">SFC 기재 카드 소지 고객<br>콜레오스·필랑트·아르카나 전 차종 (Techno 제외)<br>본인·배우자</div>
+      </div>
+      <div class="s-amount">30만</div>
+    </div>
+
+    <div class="special-item">
+      <div class="s-left">
+        <div class="s-title">🏢 협력업체 할인 1</div>
+        <div class="s-cond">1차 벤더 개인사업자 및 임직원<br>전 차종 (Techno 제외)</div>
+      </div>
+      <div class="s-amount">30만</div>
+    </div>
+
+    <div class="special-item">
+      <div class="s-left">
+        <div class="s-title">🔄 RCI 바이백 재구매 할인</div>
+        <div class="s-cond">RCI 바이백 만기/일시상환 고객<br>전/후 3개월 내 재구매 시</div>
+      </div>
+      <div class="s-amount">20만</div>
+    </div>
+
+  </div>
+
+  <div class="overlap-box">
+    <div class="title">💡 최대 혜택 조합 예시</div>
+    <div class="formula">그랑 콜레오스 가솔린 · ~25.8생산<br>가솔린100 + Loyalty50 + 생산특별200 + 유류비50 + SFC30<br>→ 현금 최대 <strong>430만원</strong> + R:assure + My Way 0% 할부</div>
+  </div>
+
+  <div class="notice-box">
+    <div class="n-title">⚠️ 공통 유의사항</div>
+    <ul>
+      <li>모든 특별판매조건은 Techno 트림 제외</li>
+      <li>렌트 사업자(타운카 포함) 적용 불가</li>
+      <li>임직원/시승차 할인과 중복 불가</li>
+      <li>공동명의 시 혜택가족 범위 내에서만 가능</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ===== 상담 ===== -->
+<div id="tab-contact" class="section">
+
+  <div class="sec-header">지점장에게 <span>직접 문의</span>하세요</div>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:18px">최적 조건은 차량·결제방식·고객 상황에 따라 달라집니다.<br>지금 바로 맞춤 견적을 받아보세요.</p>
+
+  <div class="contact-card">
+    <div class="c-name">안인회</div>
+    <div class="c-role">르노코리아 동부대로대리점 · 지점장</div>
+    <div class="c-divider"></div>
+    <div class="contact-row">
+      <div class="contact-icon">📞</div>
+      <div class="c-text"><strong>010-3680-8902</strong></div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">📍</div>
+      <div class="c-text">전주시 덕진구 과학로 1 (송천동 437)</div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">☎</div>
+      <div class="c-text">대표 063-255-3336</div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">🌐</div>
+      <div class="c-text">www.renault.co.kr</div>
+    </div>
+    <a class="cta-btn" href="tel:010-3680-8902">지금 전화 문의하기</a>
+  </div>
+
+  <div class="benefit-list">
+    <div class="benefit-item">
+      <div class="benefit-icon">🔍</div>
+      <div class="benefit-body">
+        <div class="benefit-title">맞춤 견적 상담</div>
+        <div class="benefit-desc">할부·현금·리스 등 결제방식별 최적 조건 안내</div>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">🚙</div>
+      <div class="benefit-body">
+        <div class="benefit-title">시승 예약</div>
+        <div class="benefit-desc">그랑 콜레오스 · 필랑트 · 아르카나 시승 가능</div>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">📋</div>
+      <div class="benefit-body">
+        <div class="benefit-title">서류 안내</div>
+        <div class="benefit-desc">특별 조건 해당 여부 및 필요 서류 사전 확인</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="footnote">본 혜택은 2026년 4월 한정이며, 조건에 따라 변동될 수 있습니다.<br>상세 조건은 담당자에게 문의하세요. | www.renault.co.kr</p>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
+</body>
+</html>
