@@ -2,7 +2,7 @@
 
 르노코리아 전주 동부대로대리점에서 출고한 **그랑 콜레오스 · 필랑트** 고객을 위한 모바일 웹 가이드입니다.
 
-- 라이브: <https://ihnhoian.github.io/renault-guide/>
+- 라이브: <https://ihnhoian.github.io/Renault-4/renault-guide/>
 - 필랑트 탭 바로 열기: `?model=filante` 또는 `#filante`
 
 ## 수록 내용
@@ -18,4 +18,4 @@
 
 - 단일 파일 `index.html` (외부 스크립트·프레임워크 없음, Pretendard CDN만 사용)
 - 디자인: 르노코리아 BI 기준 (White/Black 캔버스 + Sunlight Yellow `#FFED00` 단일 액센트, 각진 모서리, 그림자 없음)
-- GitHub Pages (`main` 브랜치 루트)
+- GitHub Pages: `ihnhoian/Renault-4` 저장소 `main` 브랜치 `/renault-guide/` 경로 (루트 파일은 그대로 둠)
