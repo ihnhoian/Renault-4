@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>출고 고객 운행 가이드 | 르노코리아 전주 동부대로대리점</title>
+<meta name="description" content="그랑 콜레오스·필랑트 출고 고객을 위한 My Renault 앱 설치, 공식 사용법 영상, 중립 주차 안내, 담당 지점장 연락처.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="출고 고객 운행 가이드 | 르노코리아 전주 동부대로대리점">
+<meta property="og:description" content="그랑 콜레오스 · 필랑트 오너를 위한 핵심 매뉴얼">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --primary:#FFED00;
+    --primary-deep:#E6D200;
+    --canvas:#FFFFFF;
+    --surface-soft:#F7F7F7;
+    --surface-dark:#000000;
+    --surface-deep:#111111;
+    --hairline:#F2F2F2;
+    --hairline-mid:#E6E6E6;
+    --ink:#000000;
+    --body:#222222;
+    --charcoal:#333333;
+    --mute:#666666;
+    --on-dark:#FFFFFF;
+    --on-dark-mute:rgba(255,255,255,0.72);
+    --on-dark-line:rgba(255,255,255,0.16);
+    --font:"NouvelR","Pretendard","Noto Sans KR","Inter Tight",sans-serif;
+    --r-btn:2px;
+    --r-card:0px;
+    --r-pill:46px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  [hidden]{display:none !important;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font);
+    background:var(--canvas);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;}
+  ul,ol{margin:0;padding:0;list-style:none;}
+  p{margin:0;}
+  h1,h2,h3{margin:0;font-weight:700;letter-spacing:-0.02em;}
+  svg{display:block;}
+  :focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+
+  .wrap{
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+  @media (min-width:768px){
+    .wrap{padding:0 32px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--surface-dark);
+    color:var(--on-dark);
+    padding:44px 0 40px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:40px;
+  }
+  .brand .logo{
+    width:23px;
+    height:30px;
+    color:var(--on-dark);
+    flex:0 0 auto;
+  }
+  .brand-txt{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    line-height:1.45;
+    text-transform:uppercase;
+    color:var(--on-dark);
+  }
+  .brand-txt span{
+    display:block;
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:0.02em;
+    text-transform:none;
+    color:var(--on-dark-mute);
+  }
+  .overline{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:14px;
+  }
+  .overline--dark{color:var(--on-dark-mute);}
+  .hero h1{
+    font-size:clamp(34px,10.4vw,54px);
+    line-height:1.0;
+  }
+  .hero-sub{
+    margin-top:18px;
+    font-size:15.5px;
+    line-height:1.5;
+    color:var(--on-dark-mute);
+    font-weight:400;
+  }
+  .hero-meta{
+    margin-top:28px;
+    padding-top:18px;
+    border-top:1px solid var(--on-dark-line);
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    font-size:12px;
+    color:var(--on-dark-mute);
+  }
+  .hero-meta strong{color:var(--on-dark);font-weight:700;}
+
+  /* ---------- STICKY MODEL TABS ---------- */
+  .tabbar{
+    position:sticky;
+    top:0;
+    z-index:30;
+    background:var(--canvas);
+    border-bottom:1px solid var(--ink);
+  }
+  .tabbar-in{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding-top:10px;
+    padding-bottom:10px;
+    flex-wrap:wrap;
+  }
+  .tabs{
+    display:flex;
+    gap:8px;
+    flex:1 1 auto;
+  }
+  .tab{
+    flex:1 1 0;
+    min-height:44px;
+    padding:0 16px;
+    border:1px solid var(--ink);
+    border-radius:var(--r-pill);
+    background:var(--canvas);
+    color:var(--ink);
+    font-family:inherit;
+    font-size:14.4px;
+    font-weight:700;
+    line-height:1;
+    cursor:pointer;
+    transition:background-color 120ms linear,color 120ms linear;
+    white-space:nowrap;
+  }
+  .tab:active{background:var(--surface-soft);}
+  .tab.is-active{
+    background:var(--primary);
+    border-color:var(--ink);
+    color:var(--ink);
+  }
+  .tab.is-active:active{background:var(--primary-deep);}
+  .tab-note{
+    flex:1 0 100%;
+    font-size:11.5px;
+    line-height:1.4;
+    color:var(--mute);
+  }
+  @media (min-width:560px){
+    .tab{flex:0 0 auto;padding:0 24px;}
+    .tabbar-in{flex-wrap:nowrap;}
+    .tab-note{flex:0 0 auto;text-align:right;}
+  }
+
+  /* ---------- TOC ---------- */
+  .toc{background:var(--canvas);border-bottom:1px solid var(--hairline-mid);}
+  .toc li{border-top:1px solid var(--hairline);}
+  .toc li:first-child{border-top:0;}
+  .toc a{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:15px 0;
+    text-decoration:none;
+    font-size:14.5px;
+    font-weight:600;
+  }
+  .toc a:active{background:var(--surface-soft);}
+  .toc-n{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    color:var(--mute);
+    flex:0 0 26px;
+  }
+  .toc-t{flex:1 1 auto;}
+  .toc-a{color:var(--mute);font-weight:400;}
+
+  /* ---------- SECTIONS ---------- */
+  .sec{padding:56px 0;scroll-margin-top:76px;}
+  .sec--white{background:var(--canvas);color:var(--ink);}
+  .sec--black{background:var(--surface-dark);color:var(--on-dark);}
+  .sec h2{
+    font-size:clamp(24px,6.4vw,32px);
+    line-height:1.14;
+    margin-bottom:16px;
+  }
+  .lead{
+    font-size:15.5px;
+    line-height:1.62;
+    color:var(--charcoal);
+    max-width:56ch;
+  }
+  .lead--dark{color:var(--on-dark-mute);}
+  .sec-head{margin-bottom:32px;}
+  @media (min-width:768px){
+    .sec{padding:72px 0;}
+  }
+
+  /* ---------- FEATURE ROWS ---------- */
+  .features{
+    margin-top:32px;
+    border-top:1px solid var(--ink);
+  }
+  .features li{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    padding:15px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .f-k{
+    flex:0 0 92px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--mute);
+  }
+  .f-v{font-size:15px;line-height:1.45;color:var(--body);}
+
+  /* ---------- BUTTONS ---------- */
+  .btn-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:32px;
+  }
+  @media (min-width:560px){
+    .btn-grid{grid-template-columns:1fr 1fr;}
+  }
+  .btn{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    min-height:48px;
+    padding:0 20px;
+    border:1px solid var(--ink);
+    border-radius:var(--r-btn);
+    font-size:14.4px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    background:var(--canvas);
+    color:var(--ink);
+    transition:background-color 120ms linear,color 120ms linear;
+  }
+  .btn .btn-sub{
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:0.02em;
+    color:inherit;
+    opacity:0.66;
+  }
+  .btn--dark{background:var(--ink);color:var(--on-dark);border-color:var(--ink);}
+  .btn--dark:active{background:#222222;}
+  .btn--primary{background:var(--primary);color:var(--on-primary,#000);border-color:var(--primary);}
+  .btn--primary:active{background:var(--primary-deep);}
+  .btn--ghost-dark{
+    background:transparent;
+    color:var(--on-dark);
+    border-color:var(--on-dark);
+  }
+  .btn--ghost-dark:active{background:var(--surface-deep);}
+  .btn-note{
+    margin-top:12px;
+    font-size:12px;
+    line-height:1.5;
+    color:var(--mute);
+  }
+
+  /* ---------- PLAYLIST CARD ---------- */
+  .plcard{
+    display:block;
+    background:var(--canvas);
+    color:var(--ink);
+    padding:22px 20px;
+    border-radius:var(--r-card);
+    text-decoration:none;
+  }
+  .plcard:active{background:var(--surface-soft);}
+  .plcard-tag{
+    display:inline-block;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--mute);
+    margin-bottom:12px;
+  }
+  .plcard-title{
+    display:block;
+    font-size:21px;
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:-0.02em;
+  }
+  .plcard-meta{
+    display:block;
+    margin-top:8px;
+    font-size:13px;
+    color:var(--mute);
+  }
+  .plcard-go{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:18px;
+    padding-top:15px;
+    border-top:1px solid var(--hairline-mid);
+    font-size:13px;
+    font-weight:700;
+  }
+
+  /* ---------- VIDEO LIST ---------- */
+  .vlist{
+    margin-top:28px;
+    border-top:1px solid var(--on-dark-line);
+  }
+  .vitem{border-bottom:1px solid var(--on-dark-line);}
+  .vlink,
+  .vrow{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:18px 0;
+    text-decoration:none;
+  }
+  .vlink:active{background:var(--surface-deep);}
+  .vnum{
+    flex:0 0 24px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    color:var(--on-dark-mute);
+    padding-top:3px;
+  }
+  .vbody{flex:1 1 auto;min-width:0;}
+  .vtitle{
+    display:block;
+    font-size:16px;
+    font-weight:600;
+    line-height:1.35;
+    color:var(--on-dark);
+  }
+  .vdesc{
+    display:block;
+    margin-top:5px;
+    font-size:12.5px;
+    line-height:1.45;
+    color:var(--on-dark-mute);
+  }
+  .vgo{
+    flex:0 0 auto;
+    font-size:15px;
+    line-height:1.2;
+    color:var(--on-dark-mute);
+    padding-top:1px;
+  }
+  .vlinks{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:10px;
+  }
+  .vlinks a{
+    display:inline-block;
+    padding:8px 14px;
+    min-height:36px;
+    border:1px solid var(--on-dark);
+    border-radius:var(--r-btn);
+    font-size:12.5px;
+    font-weight:700;
+    line-height:18px;
+    text-decoration:none;
+    color:var(--on-dark);
+  }
+  .vlinks a:active{background:var(--surface-deep);}
+
+  /* ---------- STEPS ---------- */
+  .steps{
+    margin-top:32px;
+    counter-reset:step;
+    border-top:1px solid var(--ink);
+  }
+  .steps li{
+    display:flex;
+    gap:16px;
+    padding:20px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .step-n{
+    flex:0 0 30px;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.5;
+    color:var(--ink);
+    letter-spacing:0.04em;
+  }
+  .step-b{flex:1 1 auto;min-width:0;}
+  .step-t{
+    display:block;
+    font-size:16px;
+    font-weight:700;
+    line-height:1.35;
+  }
+  .step-d{
+    display:block;
+    margin-top:6px;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--charcoal);
+  }
+  .step-d b{font-weight:700;color:var(--ink);}
+
+  /* ---------- CAUTION ---------- */
+  .caution{
+    margin-top:28px;
+    border:1px solid var(--ink);
+    border-radius:var(--r-card);
+    padding:20px;
+    background:var(--canvas);
+  }
+  .caution-badge{
+    display:inline-block;
+    background:var(--primary);
+    color:var(--ink);
+    border-radius:var(--r-pill);
+    padding:5px 12px 4px;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    margin-bottom:14px;
+  }
+  .caution-t{
+    display:block;
+    font-size:16px;
+    font-weight:700;
+    line-height:1.4;
+  }
+  .caution-d{
+    display:block;
+    margin-top:8px;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--charcoal);
+  }
+
+  .parking-cta{margin-top:28px;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .owner{
+    margin-top:32px;
+    padding:24px 20px;
+    border:1px solid var(--on-dark-line);
+    border-radius:var(--r-card);
+    background:var(--surface-deep);
+  }
+  .owner-name{
+    font-size:22px;
+    font-weight:700;
+    line-height:1.2;
+    color:var(--on-dark);
+  }
+  .owner-dept{
+    margin-top:8px;
+    font-size:13px;
+    line-height:1.5;
+    color:var(--on-dark-mute);
+  }
+  .owner-tel{
+    margin-top:16px;
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:0.01em;
+    color:var(--on-dark);
+  }
+  .owner-tel a{text-decoration:none;}
+
+  .contact{
+    margin-top:36px;
+    border-top:1px solid var(--on-dark-line);
+  }
+  .contact li{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--on-dark-line);
+  }
+  .c-k{
+    flex:0 0 84px;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--on-dark-mute);
+  }
+  .c-v{
+    flex:1 1 auto;
+    font-size:14.5px;
+    line-height:1.5;
+    color:var(--on-dark);
+  }
+  .c-v span{display:block;margin-top:4px;font-size:12.5px;color:var(--on-dark-mute);}
+  .c-v a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.32);}
+
+  .foot-end{
+    margin-top:44px;
+    padding-top:24px;
+    border-top:1px solid var(--on-dark-line);
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .foot-end .logo{width:17px;height:22px;color:var(--on-dark);flex:0 0 auto;}
+  .foot-end p{
+    font-size:12px;
+    line-height:1.5;
+    color:var(--on-dark-mute);
+  }
+  .legal{
+    margin-top:20px;
+    font-size:11.5px;
+    line-height:1.65;
+    color:rgba(255,255,255,0.5);
+    max-width:60ch;
+  }
+  .legal strong{color:var(--on-dark-mute);font-weight:700;}
+
+  @media (min-width:768px){
+    .f-k{flex:0 0 116px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954 1255" aria-label="Renault" role="img"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M953.5000219726562,626.9100024414063 l-334.98,-626.91 h-94.51 L190.07002197265626,626.9100024414063 l215.27,403.24 l47.25,-89.26 L285.6300219726562,626.9100024414063 l285.63,-536.6 l286.68,536.6 l-333.93,627.96 h94.51 L953.5000219726562,626.9100024414063 zM762.3800219726563,626.9100024414063 L548.1600219726563,224.72000244140622 l-48.3,89.26 l168.02,312.93 l-286.68,537.65 L94.5100219726562,626.9100024414063 l334.98,-626.91 h-95.56 L0.000021972656213620212,626.9100024414063 l333.93,627.96 h94.51 L762.3800219726563,626.9100024414063 z"/></svg>
+      <span class="brand-txt">Renault Korea<span>전주 동부대로대리점</span></span>
+    </div>
+    <p class="overline overline--dark">Delivery Owner Guide</p>
+    <h1>출고 고객<br>운행 가이드</h1>
+    <p class="hero-sub">그랑 콜레오스 · 필랑트 오너를 위한 핵심 매뉴얼</p>
+    <div class="hero-meta">
+      <span><strong>My Renault</strong> 앱 설치</span>
+      <span><strong>공식 영상</strong> 53편 · 27편</span>
+      <span><strong>중립 주차</strong> 6단계</span>
+      <span><strong>긴급 지원</strong> 엔젤센터</span>
+    </div>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="wrap tabbar-in">
+    <div class="tabs" role="tablist" aria-label="차종 선택">
+      <button type="button" class="tab is-active" id="tab-koleos" role="tab" aria-selected="true" aria-controls="guide" data-model-tab="koleos">그랑 콜레오스</button>
+      <button type="button" class="tab" id="tab-filante" role="tab" aria-selected="false" aria-controls="guide" data-model-tab="filante">필랑트</button>
+    </div>
+    <p class="tab-note">차종을 선택하면 영상 가이드와 영상 링크가 전환됩니다</p>
+  </div>
+</div>
+
+<nav class="toc" aria-label="페이지 목차">
+  <div class="wrap">
+    <ol>
+      <li><a href="#app"><span class="toc-n">01</span><span class="toc-t">My Renault 앱 설치</span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#guide"><span class="toc-n">02</span><span class="toc-t">공식 사용법 영상 가이드</span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#parking"><span class="toc-n">03</span><span class="toc-t">중립 주차(N단) 30초 가이드</span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#contact"><span class="toc-n">04</span><span class="toc-t">담당 지점장 · 긴급 지원</span><span class="toc-a" aria-hidden="true">→</span></a></li>
+    </ol>
+  </div>
+</nav>
+
+<section class="sec sec--white" id="app">
+  <div class="wrap">
+    <p class="overline">Section 01</p>
+    <h2>My Renault 공식 앱 설치</h2>
+    <p class="lead">차량 등록 후 원격 시동과 공조 제어, 디지털 키, 차량 위치 확인, 정비 예약과 보증기간 조회를 앱에서 처리합니다. 그랑 콜레오스와 필랑트 모두 같은 앱을 사용합니다.</p>
+
+    <ul class="features">
+      <li><span class="f-k">원격 제어</span><span class="f-v">시동과 공조 원격 작동</span></li>
+      <li><span class="f-k">디지털 키</span><span class="f-v">스마트폰으로 도어 잠금·해제 및 시동</span></li>
+      <li><span class="f-k">위치 확인</span><span class="f-v">주차 위치와 차량 상태 조회</span></li>
+      <li><span class="f-k">정비·보증</span><span class="f-v">정비 예약 및 보증기간 조회</span></li>
+    </ul>
+
+    <div class="btn-grid">
+      <a class="btn btn--dark" href="https://play.google.com/store/apps/details?id=com.myrsm.android" target="_blank" rel="noopener">
+        <span>Android 설치<span class="btn-sub" style="display:block;margin-top:3px;">Google Play</span></span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a class="btn btn--dark" href="https://apps.apple.com/kr/app/my-renault/id1479152318" target="_blank" rel="noopener">
+        <span>iPhone 설치<span class="btn-sub" style="display:block;margin-top:3px;">App Store</span></span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <p class="btn-note">가입 시 카카오톡 연동을 이용하면 차량 등록과 로그인이 간단합니다. 차대번호(VIN)는 자동차등록증에서 확인할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="sec sec--black" id="guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="overline overline--dark">Section 02</p>
+      <h2>공식 사용법 영상 가이드</h2>
+      <p class="lead lead--dark">르노코리아 공식 채널의 e-Guide 영상을 차종별로 정리했습니다. 아래에서 차종을 선택하면 해당 차량의 재생목록과 추천 영상으로 바뀝니다.</p>
+    </div>
+
+    <!-- 그랑 콜레오스 -->
+    <a class="plcard" data-model="koleos" href="https://www.youtube.com/playlist?list=PLjXj_7ScoJqmRy4eHckytTdFeNyweFgMq" target="_blank" rel="noopener">
+      <span class="plcard-tag">전체 재생목록</span>
+      <span class="plcard-title">Grand Koleos e-Guide</span>
+      <span class="plcard-meta">53편 · 르노코리아 공식 채널</span>
+      <span class="plcard-go"><span>유튜브에서 전체 보기</span><span aria-hidden="true">→</span></span>
+    </a>
+    <ol class="vlist" data-model="koleos">
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=l4d_7xZvopQ" target="_blank" rel="noopener">
+          <span class="vnum">01</span>
+          <span class="vbody"><span class="vtitle">중립 주차 설정</span><span class="vdesc">N단 주차 절차를 영상으로 확인</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=G8S_KFI4Bn8" target="_blank" rel="noopener">
+          <span class="vnum">02</span>
+          <span class="vbody"><span class="vtitle">My Renault 앱 카카오톡 연동 가입</span><span class="vdesc">앱 가입과 차량 등록</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=DqxVhYa_eow" target="_blank" rel="noopener">
+          <span class="vnum">03</span>
+          <span class="vbody"><span class="vtitle">My Renault 앱 디지털 키</span><span class="vdesc">스마트폰 디지털 키 설정과 사용</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=5l1y6MHNPs0" target="_blank" rel="noopener">
+          <span class="vnum">04</span>
+          <span class="vbody"><span class="vtitle">스마트키 기능 안내</span><span class="vdesc">스마트키 버튼과 편의 기능</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <span class="vrow">
+          <span class="vnum">05</span>
+          <span class="vbody">
+            <span class="vtitle">무선 스마트폰 연결</span>
+            <span class="vdesc">안드로이드 오토와 애플 카플레이</span>
+            <span class="vlinks">
+              <a href="https://www.youtube.com/watch?v=6hLK_oUUYrA" target="_blank" rel="noopener">안드로이드</a>
+              <a href="https://www.youtube.com/watch?v=y_mLG1Zhv50" target="_blank" rel="noopener">애플 카플레이</a>
+            </span>
+          </span>
+        </span>
+      </li>
+    </ol>
+
+    <!-- 필랑트 -->
+    <a class="plcard" data-model="filante" hidden href="https://www.youtube.com/playlist?list=PLjXj_7ScoJqmZ58mjd9g6e9QkXFXlYBNb" target="_blank" rel="noopener">
+      <span class="plcard-tag">전체 재생목록</span>
+      <span class="plcard-title">필랑트 R:guide</span>
+      <span class="plcard-meta">27편 · 르노코리아 공식 채널</span>
+      <span class="plcard-go"><span>유튜브에서 전체 보기</span><span aria-hidden="true">→</span></span>
+    </a>
+    <ol class="vlist" data-model="filante" hidden>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=8t3CvNnIF_k" target="_blank" rel="noopener">
+          <span class="vnum">01</span>
+          <span class="vbody"><span class="vtitle">주차 보조 시스템 · 중립 주차</span><span class="vdesc">전방·후방·측방 경보와 N단 주차 절차</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=iiWPtCHuSmA" target="_blank" rel="noopener">
+          <span class="vnum">02</span>
+          <span class="vbody"><span class="vtitle">마이 르노 앱</span><span class="vdesc">가입, 원격 제어, 디지털 키</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=8mwelELRNPc" target="_blank" rel="noopener">
+          <span class="vnum">03</span>
+          <span class="vbody"><span class="vtitle">무선 카플레이 · 안드로이드 오토</span><span class="vdesc">무선 미러링과 블루투스 연결</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=RsvUPELHz6k" target="_blank" rel="noopener">
+          <span class="vnum">04</span>
+          <span class="vbody"><span class="vtitle">인텔리전트 스마트키 · 웰컴 라이팅</span><span class="vdesc">스마트키 조작과 웰컴 그래픽 애니메이션</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li class="vitem">
+        <a class="vlink" href="https://www.youtube.com/watch?v=9jB15DoMQMk" target="_blank" rel="noopener">
+          <span class="vnum">05</span>
+          <span class="vbody"><span class="vtitle">AI 음성인식 에이닷 오토 · 팁스</span><span class="vdesc">음성 명령과 실내 기능 활용</span></span>
+          <span class="vgo" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ol>
+
+    <p class="legal">영상은 르노코리아 공식 유튜브 채널(@renault_korea)로 연결됩니다. 표시 편수는 재생목록 기준입니다.</p>
+  </div>
+</section>
+
+<section class="sec sec--white" id="parking">
+  <div class="wrap">
+    <p class="overline">Section 03</p>
+    <h2>중립 주차(N단) 30초 가이드</h2>
+    <p class="lead">시동이 켜진 상태에서 시작합니다. 그랑 콜레오스와 필랑트는 동일한 절차를 사용합니다. 순서를 바꾸면 시동이 걸린 채로 남거나 경고음이 계속될 수 있습니다.</p>
+
+    <ol class="steps">
+      <li><span class="step-n">01</span><span class="step-b"><span class="step-t">제어 센터 실행</span><span class="step-d">시동이 켜진 상태에서 중앙 디스플레이 <b>좌측 상단을 아래로 스와이프</b>합니다.</span></span></li>
+      <li><span class="step-n">02</span><span class="step-b"><span class="step-t">오토홀드 · 자동 주차 브레이크 끄기</span><span class="step-d">제어 센터에서 <b>오토홀드(Auto Hold)</b>와 <b>N에서 자동 작동 주차 브레이크</b>를 OFF로 설정합니다.</span></span></li>
+      <li><span class="step-n">03</span><span class="step-b"><span class="step-t">전자식 파킹 브레이크 해제</span><span class="step-d">브레이크를 밟은 상태에서 <b>EPB 레버를 눌러</b> 해제하고, 클러스터 표시등이 꺼진 것을 확인합니다.</span></span></li>
+      <li><span class="step-n">04</span><span class="step-b"><span class="step-t">N(중립)단으로 변속</span><span class="step-d">브레이크를 밟은 채 기어를 <b>N단</b>으로 이동합니다.</span></span></li>
+      <li><span class="step-n">05</span><span class="step-b"><span class="step-t">시동 끄기</span><span class="step-d">브레이크를 밟은 상태에서 시동을 끕니다. 이때 나오는 경고음과 경고 메시지는 무시합니다.</span></span></li>
+      <li><span class="step-n">06</span><span class="step-b"><span class="step-t">하차 후 이동 여부 확인</span><span class="step-d">도어를 잠근 뒤 <b>차량을 가볍게 밀어</b> 이동 여부를 반드시 확인합니다.</span></span></li>
+    </ol>
+
+    <div class="caution">
+      <span class="caution-badge">주의</span>
+      <span class="caution-t">경사로·비탈길 중립 주차는 절대 금지</span>
+      <span class="caution-d">부득이하게 이중주차를 할 때는 앞바퀴를 일자로 정렬합니다. 경사진 곳에서는 반드시 P단과 주차 브레이크를 사용합니다.</span>
+    </div>
+
+    <div class="parking-cta">
+      <a class="btn btn--dark" data-model="koleos" href="https://www.youtube.com/watch?v=l4d_7xZvopQ" target="_blank" rel="noopener">
+        <span>그랑 콜레오스 중립 주차 영상 보기</span><span aria-hidden="true">→</span>
+      </a>
+      <a class="btn btn--dark" data-model="filante" hidden href="https://www.youtube.com/watch?v=8t3CvNnIF_k" target="_blank" rel="noopener">
+        <span>필랑트 중립 주차 영상 보기</span><span aria-hidden="true">→</span>
+      </a>
+      <p class="btn-note">영상은 르노코리아 공식 e-Guide이며, 실제 화면과 버튼 위치는 트림과 연식에 따라 다를 수 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="sec sec--black" id="contact">
+  <div class="wrap">
+    <p class="overline overline--dark">Section 04</p>
+    <h2>담당 지점장 · 긴급 지원</h2>
+    <p class="lead lead--dark">출고 후 운행과 앱 설정, 정비 일정까지 궁금한 점은 담당 지점장에게 연락하십시오. 운행 중 사고와 고장은 엔젤센터에서 24시간 접수합니다.</p>
+
+    <div class="owner">
+      <p class="owner-dept">르노코리아 전주 동부대로대리점</p>
+      <p class="owner-name">지점장 안인회</p>
+      <p class="owner-tel"><a href="tel:010-3680-8902">010-3680-8902</a></p>
+    </div>
+
+    <div class="btn-grid">
+      <a class="btn btn--primary" href="tel:010-3680-8902">
+        <span>전화 문의</span><span aria-hidden="true">→</span>
+      </a>
+      <a class="btn btn--ghost-dark" href="sms:010-3680-8902">
+        <span>문자 문의</span><span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <ul class="contact">
+      <li>
+        <span class="c-k">대리점</span>
+        <span class="c-v">전주시 덕진구 과학로 1 (송천동 437)<span>대표전화 <a href="tel:063-255-3336">063-255-3336</a></span></span>
+      </li>
+      <li>
+        <span class="c-k">엔젤센터</span>
+        <span class="c-v">긴급출동 · 서비스<span><a href="tel:080-339-3000">080-339-3000</a></span></span>
+      </li>
+    </ul>
+
+    <div class="foot-end">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 954 1255" aria-label="Renault" role="img"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M953.5000219726562,626.9100024414063 l-334.98,-626.91 h-94.51 L190.07002197265626,626.9100024414063 l215.27,403.24 l47.25,-89.26 L285.6300219726562,626.9100024414063 l285.63,-536.6 l286.68,536.6 l-333.93,627.96 h94.51 L953.5000219726562,626.9100024414063 zM762.3800219726563,626.9100024414063 L548.1600219726563,224.72000244140622 l-48.3,89.26 l168.02,312.93 l-286.68,537.65 L94.5100219726562,626.9100024414063 l334.98,-626.91 h-95.56 L0.000021972656213620212,626.9100024414063 l333.93,627.96 h94.51 L762.3800219726563,626.9100024414063 z"/></svg>
+      <p>르노코리아 전주 동부대로대리점 · 출고 고객 운행 가이드</p>
+    </div>
+
+    <p class="legal">본 페이지는 르노코리아 전주 동부대로대리점이 출고 고객 안내를 위해 제작했습니다. <strong>차량 사양과 기능은 트림·연식에 따라 다를 수 있으며, 앱과 영상 링크는 르노코리아 공식 채널로 연결됩니다.</strong> 최신 정보는 담당 지점장에게 확인하십시오.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var MODELS = ['koleos', 'filante'];
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-model-tab]'));
+  var groups = Array.prototype.slice.call(document.querySelectorAll('[data-model]'));
+
+  function normalize(value) {
+    var v = (value || '').toLowerCase().replace(/[^a-z]/g, '');
+    if (v === 'grandkoleos' || v === 'grand-koleos') { v = 'koleos'; }
+    if (v === 'renaultfilante') { v = 'filante'; }
+    return MODELS.indexOf(v) > -1 ? v : null;
+  }
+
+  function setModel(model, updateUrl) {
+    if (MODELS.indexOf(model) < 0) { model = 'koleos'; }
+    tabs.forEach(function (tab) {
+      var on = tab.getAttribute('data-model-tab') === model;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.setAttribute('tabindex', on ? '0' : '-1');
+    });
+    groups.forEach(function (el) {
+      var match = el.getAttribute('data-model') === model;
+      el.hidden = !match;
+    });
+    document.documentElement.setAttribute('data-active-model', model);
+    if (updateUrl) {
+      var url = new URL(window.location.href);
+      url.searchParams.set('model', model);
+      url.hash = '';
+      try { window.history.replaceState(null, '', url.toString()); } catch (e) {}
+    }
+  }
+
+  function modelFromUrl() {
+    var params = new URLSearchParams(window.location.search);
+    return normalize(params.get('model')) || normalize(window.location.hash.replace('#', '')) || 'koleos';
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      setModel(tab.getAttribute('data-model-tab'), true);
+    });
+    tab.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') { return; }
+      e.preventDefault();
+      var i = MODELS.indexOf(tab.getAttribute('data-model-tab'));
+      var next = MODELS[(i + (e.key === 'ArrowRight' ? 1 : MODELS.length - 1)) % MODELS.length];
+      setModel(next, true);
+      var target = document.querySelector('[data-model-tab="' + next + '"]');
+      if (target) { target.focus(); }
+    });
+  });
+
+  window.addEventListener('hashchange', function () {
+    var m = normalize(window.location.hash.replace('#', ''));
+    if (m) { setModel(m, false); }
+  });
+
+  setModel(modelFromUrl(), false);
+})();
+</script>
+
+</body>
+</html>
