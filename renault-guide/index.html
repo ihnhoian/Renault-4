@@ -647,11 +647,11 @@
     border:1px solid var(--hairline-mid);
   }
   .fscreen-k{
+    flex:0 0 100%;
     font-size:9.5px;
     font-weight:700;
     letter-spacing:0.12em;
     color:var(--mute);
-    margin-right:2px;
   }
   .fscr{
     font-size:12px;
@@ -827,6 +827,7 @@
     .fchecks li:last-child{grid-column:auto;}
     .fchecks li{flex-direction:column;gap:3px;padding:12px 10px 13px;}
     .fck-t{font-size:12.5px;}
+    .fscreen-k{flex:0 0 auto;margin-right:2px;}
   }
 </style>
 </head>
@@ -1065,8 +1066,6 @@
         <span class="fstep-d">별도 조작 없이 차량이 무선 통신으로 업데이트 파일을 자동으로 내려받습니다. 다운로드가 끝난 뒤 <b>기어 P단 · 시동 OFF</b> 상태가 되면 중앙 스크린에 안내 팝업이 뜨고, 팝업에서 <b>업데이트 예약</b>을 선택해 원하는 일시에 진행할 수도 있습니다.</span>
         <div class="fscreen">
           <span class="fscreen-k">상태</span>
-          <span class="fscr">주행 중 자동 수신</span>
-          <span class="fscr-arr" aria-hidden="true">→</span>
           <span class="fscr">시동 OFF · P단</span>
           <span class="fscr-arr" aria-hidden="true">→</span>
           <span class="fbtn">안내 팝업 표시</span>
@@ -1152,7 +1151,7 @@
           <span class="fscreen-k">화면</span>
           <span class="fscr">자동 종료</span>
           <span class="fscr-arr" aria-hidden="true">→</span>
-          <span class="fscr">설정 · 새로운 버전 알림</span>
+          <span class="fscr">새로운 버전 알림</span>
           <span class="fscr-arr" aria-hidden="true">→</span>
           <span class="fbtn">최신 버전</span>
         </div>
