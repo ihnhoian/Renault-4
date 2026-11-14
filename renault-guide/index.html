@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>출고 고객 운행 가이드 | 르노코리아 전주 동부대로대리점</title>
-<meta name="description" content="그랑 콜레오스·필랑트 출고 고객을 위한 My Renault 앱 설치, 공식 사용법 영상, 중립 주차 안내, 담당 지점장 연락처.">
+<meta name="description" content="그랑 콜레오스·필랑트 출고 고객을 위한 My Renault 앱 설치, 공식 사용법 영상, 중립 주차 안내, 무선 소프트웨어 업데이트(FOTA) 순서, 담당 지점장 연락처.">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="출고 고객 운행 가이드 | 르노코리아 전주 동부대로대리점">
-<meta property="og:description" content="그랑 콜레오스 · 필랑트 오너를 위한 핵심 매뉴얼">
+<meta property="og:description" content="그랑 콜레오스 · 필랑트 오너를 위한 핵심 매뉴얼 — 앱 설치, 공식 영상, 중립 주차, 무선 업데이트 순서도">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -564,6 +564,270 @@
   @media (min-width:768px){
     .f-k{flex:0 0 116px;}
   }
+
+  /* ---------- SECTION 04 · FOTA FLOW DIAGRAM ---------- */
+  .sec--fota{border-top:1px solid var(--ink);}
+  .fota-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 18px;
+    margin-top:26px;
+    padding:13px 0 12px;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    font-size:11.5px;
+    line-height:1.4;
+    color:var(--mute);
+  }
+  .fota-meta strong{color:var(--ink);font-weight:700;}
+
+  .flow{margin-top:30px;}
+  .fstep{
+    position:relative;
+    border:1px solid var(--ink);
+    border-radius:var(--r-card);
+    background:var(--canvas);
+    padding:16px 16px 18px;
+    margin-bottom:36px;
+  }
+  .flow .fstep:last-child{margin-bottom:0;}
+  .fstep--key{border-top:6px solid var(--primary);}
+  .fstep-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:10px;
+  }
+  .fstep-n{
+    flex:0 0 auto;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    color:var(--ink);
+  }
+  .fbadge{
+    display:inline-block;
+    flex:0 0 auto;
+    padding:5px 10px 4px;
+    border:1px solid var(--ink);
+    border-radius:var(--r-pill);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    line-height:1.2;
+    color:var(--ink);
+    background:var(--canvas);
+  }
+  .fbadge--key{background:var(--ink);border-color:var(--ink);color:var(--on-dark);}
+  .fstep-t{
+    display:block;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.32;
+    letter-spacing:-0.01em;
+  }
+  .fstep-d{
+    display:block;
+    margin-top:8px;
+    font-size:13.8px;
+    line-height:1.62;
+    color:var(--charcoal);
+  }
+  .fstep-d b{color:var(--ink);font-weight:700;}
+
+  .fscreen{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:12px;
+    padding:9px 11px;
+    background:var(--surface-soft);
+    border:1px solid var(--hairline-mid);
+  }
+  .fscreen-k{
+    font-size:9.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    color:var(--mute);
+    margin-right:2px;
+  }
+  .fscr{
+    font-size:12px;
+    font-weight:700;
+    line-height:1.35;
+    color:var(--ink);
+  }
+  .fscr-arr{font-size:11px;line-height:1;color:var(--mute);}
+  .fbtn{
+    display:inline-block;
+    padding:5px 9px 4px;
+    border:1px solid var(--ink);
+    border-radius:var(--r-btn);
+    background:var(--canvas);
+    font-size:11.5px;
+    font-weight:700;
+    line-height:1.25;
+    color:var(--ink);
+  }
+  .fcount{
+    display:inline-block;
+    padding:4px 8px 3px;
+    border-radius:var(--r-btn);
+    background:var(--ink);
+    font-size:10.5px;
+    font-weight:700;
+    line-height:1.25;
+    color:var(--on-dark);
+  }
+
+  .ftip{
+    margin-top:12px;
+    padding:11px 12px 12px;
+    background:var(--surface-soft);
+    border-left:2px solid var(--ink);
+  }
+  .ftip-k{
+    display:block;
+    margin-bottom:4px;
+    font-size:9.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    color:var(--ink);
+  }
+  .ftip-d{
+    display:block;
+    font-size:12.5px;
+    line-height:1.6;
+    color:var(--charcoal);
+  }
+
+  .fchecks-cap{
+    display:block;
+    margin-top:16px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.02em;
+    color:var(--ink);
+  }
+  .fchecks{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    margin-top:8px;
+    border-top:1px solid var(--ink);
+    border-left:1px solid var(--ink);
+  }
+  .fchecks li{
+    display:flex;
+    align-items:flex-start;
+    gap:7px;
+    padding:10px 9px 11px;
+    border-right:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .fchecks li:last-child{grid-column:1 / -1;}
+  .fck-n{
+    flex:0 0 auto;
+    font-size:11.5px;
+    font-weight:700;
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .fck-t{
+    min-width:0;
+    font-size:12.5px;
+    font-weight:600;
+    line-height:1.45;
+    color:var(--ink);
+  }
+  .fck-t span{display:block;margin-top:1px;font-size:10.5px;font-weight:400;color:var(--mute);}
+  .fchecks-note{
+    margin-top:10px;
+    font-size:12px;
+    line-height:1.6;
+    color:var(--mute);
+  }
+
+  .fconn{
+    position:absolute;
+    left:50%;
+    bottom:-36px;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    pointer-events:none;
+  }
+  .fconn-l{display:block;width:2px;height:27px;background:var(--ink);}
+  .fconn-a{
+    display:block;
+    width:0;
+    height:0;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:8px solid var(--ink);
+  }
+
+  .caution--fota{margin-top:30px;}
+  .clist{margin-top:14px;border-top:1px solid var(--hairline-mid);}
+  .clist li{
+    padding:11px 0 12px;
+    border-bottom:1px solid var(--hairline);
+    font-size:13.2px;
+    line-height:1.62;
+    color:var(--charcoal);
+  }
+  .clist li:last-child{border-bottom:0;padding-bottom:0;}
+  .clist b{
+    display:block;
+    margin-bottom:3px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--ink);
+  }
+
+  .notices{margin-top:32px;border-top:1px solid var(--ink);}
+  .notices-k{
+    margin:0;
+    padding:12px 0 11px;
+    border-bottom:1px solid var(--ink);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    color:var(--mute);
+  }
+  .notices li{border-bottom:1px solid var(--hairline);}
+  .notices a{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:14px;
+    padding:14px 0;
+    text-decoration:none;
+  }
+  .notices a:active{background:var(--surface-soft);}
+  .nl-t{display:block;font-size:14px;font-weight:700;line-height:1.4;color:var(--ink);}
+  .nl-m{display:block;margin-top:4px;font-size:11.5px;font-weight:400;line-height:1.4;color:var(--mute);}
+  .nl-arr{flex:0 0 auto;font-size:13px;line-height:1.5;color:var(--mute);}
+  .fota-tel{
+    margin-top:16px;
+    font-size:12.5px;
+    line-height:1.65;
+    color:var(--charcoal);
+  }
+  .fota-tel a{color:var(--ink);font-weight:700;text-decoration:none;border-bottom:1px solid var(--ink);}
+
+  @media (min-width:600px){
+    .fstep{padding:22px 24px 24px;}
+    .fstep-t{font-size:18px;}
+    .fstep-d{font-size:14.5px;}
+    .fchecks{grid-template-columns:repeat(5,1fr);}
+    .fchecks li:last-child{grid-column:auto;}
+    .fchecks li{flex-direction:column;gap:3px;padding:12px 10px 13px;}
+    .fck-t{font-size:12.5px;}
+  }
 </style>
 </head>
 <body>
@@ -581,6 +845,7 @@
       <span><strong>My Renault</strong> 앱 설치</span>
       <span><strong>공식 영상</strong> 53편 · 27편</span>
       <span><strong>중립 주차</strong> 6단계</span>
+      <span><strong>무선 업데이트</strong> 5단계</span>
       <span><strong>긴급 지원</strong> 엔젤센터</span>
     </div>
   </div>
@@ -602,7 +867,8 @@
       <li><a href="#app"><span class="toc-n">01</span><span class="toc-t">My Renault 앱 설치</span><span class="toc-a" aria-hidden="true">→</span></a></li>
       <li><a href="#guide"><span class="toc-n">02</span><span class="toc-t">공식 사용법 영상 가이드</span><span class="toc-a" aria-hidden="true">→</span></a></li>
       <li><a href="#parking"><span class="toc-n">03</span><span class="toc-t">중립 주차(N단) 30초 가이드</span><span class="toc-a" aria-hidden="true">→</span></a></li>
-      <li><a href="#contact"><span class="toc-n">04</span><span class="toc-t">담당 지점장 · 긴급 지원</span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#fota"><span class="toc-n">04</span><span class="toc-t">무선 소프트웨어 업데이트(FOTA) 순서도</span><span class="toc-a" aria-hidden="true">→</span></a></li>
+      <li><a href="#contact"><span class="toc-n">05</span><span class="toc-t">담당 지점장 · 긴급 지원</span><span class="toc-a" aria-hidden="true">→</span></a></li>
     </ol>
   </div>
 </nav>
@@ -775,9 +1041,167 @@
   </div>
 </section>
 
+<section class="sec sec--white sec--fota" id="fota">
+  <div class="wrap">
+    <p class="overline">Section 04</p>
+    <h2>무선 소프트웨어<br>업데이트 순서도</h2>
+    <p class="lead">그랑 콜레오스와 필랑트는 openR 파노라마 스크린을 쓰는 <b>같은 절차</b>입니다. 차량이 업데이트를 내려받으면 중앙 스크린 안내에 따라 아래 5단계만 진행하면 되고, 서비스 센터를 방문할 필요가 없습니다.</p>
+
+    <div class="fota-meta">
+      <span><strong>5단계</strong> 화면 안내 순서</span>
+      <span><strong>2분</strong> 설치 시작 조건</span>
+      <span><strong>10분~1시간</strong> 예상 소요</span>
+      <span><strong>무상</strong> 진행</span>
+    </div>
+
+    <ol class="flow">
+      <!-- STEP 01 -->
+      <li class="fstep">
+        <div class="fstep-top">
+          <span class="fstep-n">STEP 01</span>
+          <span class="fbadge">주행 중 자동 수신</span>
+        </div>
+        <span class="fstep-t">자동 다운로드 (주행 중)</span>
+        <span class="fstep-d">별도 조작 없이 차량이 무선 통신으로 업데이트 파일을 자동으로 내려받습니다. 다운로드가 끝난 뒤 <b>기어 P단 · 시동 OFF</b> 상태가 되면 중앙 스크린에 안내 팝업이 뜨고, 팝업에서 <b>업데이트 예약</b>을 선택해 원하는 일시에 진행할 수도 있습니다.</span>
+        <div class="fscreen">
+          <span class="fscreen-k">상태</span>
+          <span class="fscr">주행 중 자동 수신</span>
+          <span class="fscr-arr" aria-hidden="true">→</span>
+          <span class="fscr">시동 OFF · P단</span>
+          <span class="fscr-arr" aria-hidden="true">→</span>
+          <span class="fbtn">안내 팝업 표시</span>
+        </div>
+        <span class="fconn" aria-hidden="true"><span class="fconn-l"></span><span class="fconn-a"></span></span>
+      </li>
+
+      <!-- STEP 02 -->
+      <li class="fstep">
+        <div class="fstep-top">
+          <span class="fstep-n">STEP 02</span>
+          <span class="fbadge">알림 확인</span>
+        </div>
+        <span class="fstep-t">알림 확인 후 '지금 업데이트' 선택</span>
+        <span class="fstep-d">시동이 꺼진 상태에서 중앙 스크린의 <b>&lt;업데이트 알림&gt;</b> 팝업 하단에 있는 <b>'지금 업데이트'</b> 버튼을 터치합니다.</span>
+        <div class="fscreen">
+          <span class="fscreen-k">화면</span>
+          <span class="fscr">&lt;업데이트 알림&gt;</span>
+          <span class="fscr-arr" aria-hidden="true">→</span>
+          <span class="fbtn">지금 업데이트</span>
+        </div>
+        <span class="fconn" aria-hidden="true"><span class="fconn-l"></span><span class="fconn-a"></span></span>
+      </li>
+
+      <!-- STEP 03 -->
+      <li class="fstep">
+        <div class="fstep-top">
+          <span class="fstep-n">STEP 03</span>
+          <span class="fbadge">유의사항 확인</span>
+        </div>
+        <span class="fstep-t">유의사항 확인 후 한 번 더 선택</span>
+        <span class="fstep-d">예상 소요 시간과 업데이트 중에는 차량을 사용할 수 없다는 안내를 확인한 뒤 <b>'지금 업데이트'</b>를 한 번 더 누릅니다. 예상 시간은 업데이트 내용에 따라 다르며, 최근 공지 기준 <b>그랑 콜레오스 약 10분 · 필랑트 약 1시간</b> 내외입니다.</span>
+        <div class="fscreen">
+          <span class="fscreen-k">화면</span>
+          <span class="fscr">&lt;유의사항 안내&gt;</span>
+          <span class="fscr-arr" aria-hidden="true">→</span>
+          <span class="fbtn">지금 업데이트</span>
+        </div>
+        <div class="ftip">
+          <span class="ftip-k">진행 전 준비</span>
+          <span class="ftip-d">소지품을 모두 챙겨 하차 · 휴대폰 Wi-Fi·블루투스 연결 해제 · 블랙박스 전원 분리 · OBD 단자 외부 장착물 제거</span>
+        </div>
+        <span class="fconn" aria-hidden="true"><span class="fconn-l"></span><span class="fconn-a"></span></span>
+      </li>
+
+      <!-- STEP 04 -->
+      <li class="fstep fstep--key">
+        <div class="fstep-top">
+          <span class="fstep-n">STEP 04</span>
+          <span class="fbadge fbadge--key">핵심 단계</span>
+        </div>
+        <span class="fstep-t">전원 하차 후 2분 내 모든 도어 잠금</span>
+        <span class="fstep-d">카운트다운 화면이 뜨면 <b>모든 탑승자가 내린 뒤 차량의 모든 도어를 잠급니다.</b> 시작 후 2분 이내에 아래 5가지 조건이 모두 충족되어야 설치가 시작됩니다.</span>
+        <div class="fscreen">
+          <span class="fscreen-k">화면</span>
+          <span class="fscr">&lt;업데이트 시작&gt;</span>
+          <span class="fcount">2분 카운트다운</span>
+          <span class="fscr-arr" aria-hidden="true">→</span>
+          <span class="fbtn">하차 후 도어 잠금</span>
+        </div>
+
+        <span class="fchecks-cap">2분 이내 설치 시작 조건 5가지</span>
+        <ul class="fchecks">
+          <li><span class="fck-n">①</span><span class="fck-t">시동 정지<span>OFF</span></span></li>
+          <li><span class="fck-n">②</span><span class="fck-t">기어 P<span>주차</span></span></li>
+          <li><span class="fck-n">③</span><span class="fck-t">모든 도어 잠금<span>전 좌석 포함</span></span></li>
+          <li><span class="fck-n">④</span><span class="fck-t">디스플레이 조작 금지<span>중앙 · 동승석</span></span></li>
+          <li><span class="fck-n">⑤</span><span class="fck-t">12V 배터리<span>충전 양호</span></span></li>
+        </ul>
+        <p class="fchecks-note">2분 이내에 중앙 스크린이나 동승석 디스플레이를 조작하면 업데이트가 취소됩니다.</p>
+        <span class="fconn" aria-hidden="true"><span class="fconn-l"></span><span class="fconn-a"></span></span>
+      </li>
+
+      <!-- STEP 05 -->
+      <li class="fstep">
+        <div class="fstep-top">
+          <span class="fstep-n">STEP 05</span>
+          <span class="fbadge">자동 설치</span>
+        </div>
+        <span class="fstep-t">자동 설치 후 최신 버전 확인</span>
+        <span class="fstep-d">설치가 끝나면 시스템이 자동으로 종료됩니다. 다음 시동 후 중앙 스크린 설정에서 <b>'새로운 버전 알림'</b> 문구가 <b>'최신 버전'</b>으로 바뀌었는지 확인합니다. 일부 개인 설정이 초기화될 수 있으니 필요하면 다시 설정합니다.</span>
+        <div class="fscreen">
+          <span class="fscreen-k">화면</span>
+          <span class="fscr">자동 종료</span>
+          <span class="fscr-arr" aria-hidden="true">→</span>
+          <span class="fscr">설정 · 새로운 버전 알림</span>
+          <span class="fscr-arr" aria-hidden="true">→</span>
+          <span class="fbtn">최신 버전</span>
+        </div>
+      </li>
+    </ol>
+
+    <div class="caution caution--fota">
+      <span class="caution-badge">주의</span>
+      <span class="caution-t">어린이 · 반려동물을 차 안에 혼자 두고 진행하지 마십시오</span>
+      <span class="caution-d">설치가 시작되면 완료될 때까지 차량을 사용할 수 없습니다. 아래 내용을 확인한 뒤 진행하십시오.</span>
+      <ul class="clist">
+        <li><b>설치 중 사용 불가</b>도어 개방, 차량 주행, 멀티미디어 사용이 불가합니다.</li>
+        <li><b>스마트키로 도어 열림 불가</b>업데이트 중에는 스마트키로 도어를 열 수 없습니다. 긴급하면 비상키나 내부 도어핸들로 열 수 있으나 업데이트가 중단됩니다. 중단되더라도 이후 다시 실행할 수 있습니다.</li>
+        <li><b>설정 초기화</b>업데이트 후 일부 설정 값이 초기화될 수 있으니 필요한 기능은 다시 설정하십시오.</li>
+      </ul>
+    </div>
+
+    <div class="notices">
+      <p class="notices-k">르노코리아 공식 안내 원문</p>
+      <ul>
+        <li data-model="koleos">
+          <a href="https://www.renault.co.kr/ko/inside/notice_view.jsp?idx=67&amp;update2=2026-11-12" target="_blank" rel="noopener">
+            <span><span class="nl-t">그랑 콜레오스 무선 소프트웨어 업데이트 안내</span><span class="nl-m">2026-11-12 공지 · renault.co.kr</span></span>
+            <span class="nl-arr" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li data-model="filante" hidden>
+          <a href="https://www.renault.co.kr/ko/inside/notice_view.jsp?idx=65&amp;update2=2026-09-29" target="_blank" rel="noopener">
+            <span><span class="nl-t">필랑트 무선 소프트웨어 업데이트 안내</span><span class="nl-m">2026-09-29 공지 · renault.co.kr</span></span>
+            <span class="nl-arr" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.renault.co.kr/ko/inside/notice_list.jsp" target="_blank" rel="noopener">
+            <span><span class="nl-t">공지사항 전체 보기</span><span class="nl-m">고객 가이드 및 업데이트 정보</span></span>
+            <span class="nl-arr" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+      <p class="fota-tel">무선 업데이트 문의 · 커넥티비티 고객센터 <a href="tel:080-339-3000">080-339-3000</a></p>
+    </div>
+
+    <p class="btn-note">업데이트 대상과 내용은 차량 제작 시기와 공지에 따라 다릅니다. 화면과 버튼 위치는 트림·연식에 따라 다를 수 있습니다.</p>
+  </div>
+</section>
+
 <footer class="sec sec--black" id="contact">
   <div class="wrap">
-    <p class="overline overline--dark">Section 04</p>
+    <p class="overline overline--dark">Section 05</p>
     <h2>담당 지점장 · 긴급 지원</h2>
     <p class="lead lead--dark">출고 후 운행과 앱 설정, 정비 일정까지 궁금한 점은 담당 지점장에게 연락하십시오. 운행 중 사고와 고장은 엔젤센터에서 24시간 접수합니다.</p>
 
